@@ -13,7 +13,8 @@
         <div class="navbar-container">
             <div class="logo" id="main_logo">載入中...</div>
             <div>
-                <button type="button" class="menu-btn" id="menu-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-link">
+                <button type="button" class="menu-btn" id="menu-btn" aria-label="開啟選單" aria-expanded="false"
+                    aria-controls="nav-link">
                     <span class="menu-btn-bar"></span>
                     <span class="menu-btn-bar"></span>
                     <span class="menu-btn-bar"></span>
@@ -73,7 +74,7 @@
                 <button type="button" class="btn-primary" id="btn-newcomer">我是新來的</button>
                 <button type="button" class="btn-secondary" id="btn-visitor">我是訪客</button>
             </div>
-            
+
             <!-- 輸入名字區域，預設隱藏 -->
             <div id="name-input-section" class="name-input-section" style="display: none;">
                 <p>請告訴我您的名字，為您生成專屬頭像：</p>
@@ -91,6 +92,9 @@
     </div>
 
     <script src="./java.js"></script>
+    <script>
+        (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "vTDbp_r8A42sKpT8G0RKs"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+    </script>
 </body>
 
 </html>
