@@ -4,50 +4,50 @@
 }
 
 :root {
-    --bg-color: #0f172a;
-    --surface-color: #1e293b;
-    --input-bg: #0b1220;
-    --accent-color: #38bdf8;
-    --accent-hover: #7dd3fc;
-    --accent-active: #0ea5e9;
+    --bg-color: #2e3440;
+    --surface-color: #3b4252;
+    --input-bg: #292e39;
+    --accent-color: #88c0d0;
+    --accent-hover: #8fbcbb;
+    --accent-active: #81a1c1;
     --text-color: #f1f5f9;
     --text-secondary: darkgray;
 }
 
 .theme-sky {
-    --bg-color: #0f172a;
-    --surface-color: #1e293b;
-    --input-bg: #0b1220;
-    --accent-color: #38bdf8;
-    --accent-hover: #7dd3fc;
-    --accent-active: #0ea5e9;
+    --bg-color: #2e3440;
+    --surface-color: #3b4252;
+    --input-bg: #292e39;
+    --accent-color: #88c0d0;
+    --accent-hover: #8fbcbb;
+    --accent-active: #81a1c1;
 }
 
 .theme-indigo {
-    --bg-color: #1e1b4b;
-    --surface-color: #312e81;
-    --input-bg: #1e1a3c;
-    --accent-color: #a78bfa;
-    --accent-hover: #c4b5fd;
-    --accent-active: #7c3aed;
+    --bg-color: #231942;
+    --surface-color: #352a5c;
+    --input-bg: #1e1538;
+    --accent-color: #ff8fab;
+    --accent-hover: #ffb3c1;
+    --accent-active: #fb6f92;
 }
 
 .theme-green {
-    --bg-color: #052e16;
-    --surface-color: #14532d;
-    --input-bg: #042713;
-    --accent-color: #4ade80;
-    --accent-hover: #86efac;
-    --accent-active: #16a34a;
+    --bg-color: #283618;
+    --surface-color: #3a5a40;
+    --input-bg: #222e14;
+    --accent-color: #dda15e;
+    --accent-hover: #e9c46a;
+    --accent-active: #bc6c25;
 }
 
 .theme-red {
-    --bg-color: #450a0a;
-    --surface-color: #7f1d1d;
-    --input-bg: #3a0808;
-    --accent-color: #f87171;
-    --accent-hover: #fca5a5;
-    --accent-active: #dc2626;
+    --bg-color: #4a4e69;
+    --surface-color: #6b7091;
+    --input-bg: #3e425a;
+    --accent-color: #f2e9e4;
+    --accent-hover: #ffffff;
+    --accent-active: #c9ada7;
 }
 
 body {
@@ -59,6 +59,68 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.bg-dots {
+    animation: move-bg-32 25s linear infinite;
+    --dot-color: hsl(0 0% 95% / .5);
+    background-image: radial-gradient(var(--dot-color) 1.5px, transparent 1.5px), radial-gradient(var(--dot-color) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+}
+
+.bg-star-char {
+    animation: move-bg-96 45s linear infinite;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e𖥔%3c/text%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e𖥔%3c/text%3e%3c/svg%3e");
+    background-size: 96px 96px;
+}
+
+.bg-heart-char {
+    animation: move-bg-96 45s linear infinite;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e♥%3c/text%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e♥%3c/text%3e%3c/svg%3e");
+    background-size: 96px 96px;
+}
+
+.bg-cloud-char {
+    animation: move-bg-96 45s linear infinite;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e☁%3c/text%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e☁%3c/text%3e%3c/svg%3e");
+    background-size: 96px 96px;
+}
+
+.bg-clover-char {
+    animation: move-bg-64 35s linear infinite;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='12' y='32' font-size='24' fill='%23f2f2f240'%3e☘︎%3c/text%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='12' y='32' font-size='24' fill='%23f2f2f240'%3e☘︎%3c/text%3e%3c/svg%3e");
+    background-size: 64px 64px;
+}
+
+.bg-classic {
+    background-image: none;
+}
+
+@keyframes move-bg-32 {
+    from {
+        background-position: 0 0, 16px 16px;
+    }
+    to {
+        background-position: 32px 32px, 48px 48px;
+    }
+}
+
+@keyframes move-bg-64 {
+    from {
+        background-position: 0 0, 32px 32px;
+    }
+    to {
+        background-position: 64px 64px, 96px 96px;
+    }
+}
+
+@keyframes move-bg-96 {
+    from {
+        background-position: 0 0, 48px 48px;
+    }
+    to {
+        background-position: 96px 96px, 144px 144px;
+    }
 }
 
 .navbar {
@@ -192,10 +254,6 @@ button {
     background-color: var(--surface-color);
     color: var(--text-color);
 }
-
-/* button:hover {
-    opacity: 0.5;
-} */
 
 .hero-image {
     flex: 1;
@@ -375,9 +433,6 @@ button {
     }
 }
 
-/* ==========================================================================
-   歡迎彈窗與頭像樣式 (Welcome Modal & Avatar Styles)
-   ========================================================================== */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -458,9 +513,6 @@ button {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ==========================================================================
-   頁尾樣式 (Footer Styles)
-   ========================================================================== */
 .footer {
     background-color: var(--surface-color);
     padding: 20px 10%;

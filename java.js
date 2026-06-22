@@ -1,36 +1,29 @@
-//1. 傳送某一段話給控制台
 console.log('Javascript已連結，準備進行互動...');
 
-//2. 處理訪客身分與姓名（彈窗互動）
 let visitorName = localStorage.getItem('visitorName') || '';
 let visitorAvatar = localStorage.getItem('visitorAvatar') || '';
 
 const logoElement = document.getElementById('main_logo');
 const heroTitle = document.getElementById('hero-title');
 
-// 更新頁面上的名字與頭像
 function updateUserInfo(name, avatarUrl) {
     visitorName = name;
     visitorAvatar = avatarUrl;
     
-    // 儲存到 localStorage
     localStorage.setItem('visitorName', name);
     localStorage.setItem('visitorAvatar', avatarUrl);
     
-    // 更新 Logo (包含頭像)
     if (avatarUrl) {
         logoElement.innerHTML = `<img src="${avatarUrl}" class="user-avatar" alt="Avatar"> <b>${name}</b>'s Website`;
     } else {
         logoElement.innerHTML = `<b>${name}</b>'s Website`;
     }
     
-    // 更新 Hero 標題
     if (heroTitle) {
         heroTitle.innerHTML = `我的未來，由<span class="highlight">${name}</span>主宰`;
     }
 }
 
-// 彈窗相關 DOM 元素
 const welcomeModal = document.getElementById('welcome-modal');
 const btnNewcomer = document.getElementById('btn-newcomer');
 const btnVisitor = document.getElementById('btn-visitor');
@@ -50,20 +43,17 @@ function hideModal() {
     welcomeModal.style.display = 'none';
 }
 
-// 點擊「我是訪客」
 btnVisitor.addEventListener('click', () => {
     updateUserInfo('訪客', 'https://api.dicebear.com/7.x/avataaars/svg?seed=Guest');
     hideModal();
 });
 
-// 點擊「我是新來的」
 btnNewcomer.addEventListener('click', () => {
     modalChoices.style.display = 'none';
     nameInputSection.style.display = 'block';
     visitorNameInput.focus();
 });
 
-// 送出名字
 function submitName() {
     let name = visitorNameInput.value.trim();
     if (name === '') {
@@ -81,7 +71,6 @@ visitorNameInput.addEventListener('keydown', (e) => {
     }
 });
 
-// 頁面載入時的初始化檢查：重整時總是顯示彈窗
 showModal();
 if (visitorName) {
     updateUserInfo(visitorName, visitorAvatar);
@@ -96,7 +85,6 @@ const changeColorBtn = document.getElementById('change-color-btn');
 const menuBtn = document.getElementById('menu-btn');
 const navLink = document.getElementById('nav-link');
 
-//3.5 手機版漢堡選單：切換展開/收合，點選連結後自動收合
 function closeMenu() {
     navLink.classList.remove('open');
     menuBtn.classList.remove('is-open');
@@ -115,7 +103,6 @@ navLink.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', closeMenu);
 });
 
-//3. 變換顏色：每呼叫一次就切換到下一組主題 class，顏色定義都放在 style.css
 const themeClasses = ['theme-sky', 'theme-indigo', 'theme-green', 'theme-red'];
 
 let themeIndex = 0;
@@ -129,7 +116,23 @@ function applyNextTheme() {
 
 changeColorBtn.addEventListener('click', applyNextTheme);
 
-//4. Todo 整合：跟 todo/script.js 共用同一個 localStorage key 跟資料格式
+const bgClasses = ['bg-classic', 'bg-dots', 'bg-star-char', 'bg-cloud-char', 'bg-heart-char', 'bg-clover-char'];
+const bgNames = {
+    'bg-classic': '經典',
+    'bg-dots': '點點',
+    'bg-star-char': '星星',
+    'bg-cloud-char': '雲朵',
+    'bg-heart-char': '愛心',
+    'bg-clover-char': '幸運草'
+};
+let bgIndex = 0;
+
+function applyNextBackground() {
+    bgIndex = (bgIndex + 1) % bgClasses.length;
+    document.body.classList.remove(...bgClasses);
+    document.body.classList.add(bgClasses[bgIndex]);
+}
+
 const TODO_STORAGE_KEY = 'improved-todo-list-todos';
 const TODO_ADD_PATTERN = /^(?:新增待辦|待辦新增|todo)[:：\s]*(.*)$/i;
 
@@ -149,7 +152,6 @@ function addTodoFromCommand(text) {
     localStorage.setItem(TODO_STORAGE_KEY, JSON.stringify(todos));
 }
 
-//5. 指令輸入與回覆：用 includes() 比對關鍵字，輸入較自由也能命中
 function handleCommand() {
     const command = commandInput.value.trim();
 
@@ -182,6 +184,10 @@ function handleCommand() {
     } else if (command.includes('變換顏色') || command.includes('換色') || command.includes('顏色')) {
         applyNextTheme();
         commandStatus.textContent = 'AI 助理：已經幫你變換顏色囉！';
+    } else if (command.includes('更換背景') || command.includes('換背景')) {
+        applyNextBackground();
+        const currentBgName = bgNames[bgClasses[bgIndex]] || '新';
+        commandStatus.textContent = `AI 助理：背景已更換為「${currentBgName}」風格！`;
     } else {
         commandStatus.textContent = `AI 助理：已收到指令「${command}」，正在處理中...`;
     }
@@ -198,7 +204,6 @@ commandInput.addEventListener('keydown', (event) => {
     }
 });
 
-// 6. 範例指令點擊填入輸入框
 document.querySelectorAll('.example-tag').forEach((tag) => {
     tag.addEventListener('click', () => {
         const cmd = tag.getAttribute('data-cmd');
@@ -209,7 +214,6 @@ document.querySelectorAll('.example-tag').forEach((tag) => {
     });
 });
 
-// 7. 範例名字點擊填入輸入框
 document.querySelectorAll('.name-tag').forEach((tag) => {
     tag.addEventListener('click', () => {
         const name = tag.getAttribute('data-name');
@@ -219,4 +223,3 @@ document.querySelectorAll('.name-tag').forEach((tag) => {
         }
     });
 });
-
