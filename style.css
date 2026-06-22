@@ -62,32 +62,32 @@ body {
 }
 
 .bg-dots {
-    animation: move-bg-32 25s linear infinite;
+    animation: move-bg-32 5s linear infinite;
     --dot-color: hsl(0 0% 95% / .5);
     background-image: radial-gradient(var(--dot-color) 1.5px, transparent 1.5px), radial-gradient(var(--dot-color) 1.5px, transparent 1.5px);
     background-size: 32px 32px;
 }
 
 .bg-star-char {
-    animation: move-bg-96 45s linear infinite;
+    animation: move-bg-96 4s linear infinite;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e𖥔%3c/text%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e𖥔%3c/text%3e%3c/svg%3e");
     background-size: 96px 96px;
 }
 
 .bg-heart-char {
-    animation: move-bg-96 45s linear infinite;
+    animation: move-bg-96 4s linear infinite;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e♥%3c/text%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e♥%3c/text%3e%3c/svg%3e");
     background-size: 96px 96px;
 }
 
 .bg-cloud-char {
-    animation: move-bg-96 45s linear infinite;
+    animation: move-bg-96 4s linear infinite;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e☁%3c/text%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='16' y='31' font-size='16' fill='%23f2f2f240'%3e☁%3c/text%3e%3c/svg%3e");
     background-size: 96px 96px;
 }
 
 .bg-clover-char {
-    animation: move-bg-64 35s linear infinite;
+    animation: move-bg-64 4s linear infinite;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='12' y='32' font-size='24' fill='%23f2f2f240'%3e☘︎%3c/text%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3e%3ctext x='12' y='32' font-size='24' fill='%23f2f2f240'%3e☘︎%3c/text%3e%3c/svg%3e");
     background-size: 64px 64px;
 }
