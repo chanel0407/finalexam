@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="theme-sky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的待辦事項</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">待辦事項</div>
+            <a href="../index.html" class="back-home-link">← 返回首頁</a>
+        </div>
+    </nav>
+
+    <main class="todo-container">
+        <h1>我的待辦事項</h1>
+
+        <form id="todo-form" class="todo-form">
+            <input type="text" id="todo-input" placeholder="請輸入提醒事項" required>
+            <input type="datetime-local" id="todo-time">
+            <button type="submit">確定新增</button>
+        </form>
+
+        <ul id="todo-list" class="todo-list"></ul>
+        <p id="empty-message" class="empty-message">目前沒有待辦事項</p>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>

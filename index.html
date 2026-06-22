@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="theme-sky">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>響應式網頁設計佈局練習</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo" id="main_logo">載入中...</div>
+            <div>
+                <button type="button" class="menu-btn" id="menu-btn" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-link">
+                    <span class="menu-btn-bar"></span>
+                    <span class="menu-btn-bar"></span>
+                    <span class="menu-btn-bar"></span>
+                </button>
+                <ul class="nav-link" id="nav-link">
+                    <li><a href='#'>台積電</a></li>
+                    <li><a href='#'>台積電</a></li>
+                    <li><a href='#'>台積電</a></li>
+                    <li><a href='./todo/index.html'>待辦事項</a></li>
+                    <li><a href='#' class="btn-chat">Contact US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 id="hero-title">我的未來，由<span class="highlight">余瑄瑤</span>主宰</h1>
+            <p>這是我在東吳大學基礎網頁設計課的第一個自製網站。我將學習使用響應式網頁設計的功能</p>
+
+            <div class="command-row">
+                <input class="command-input" id="command-input" type="text" placeholder="輸入指令，例如：你好、學校、新增待辦 買牛奶...">
+                <button class="send-prompt" id="send-prompt" type="button">發送指令</button>
+            </div>
+            <div class="command-examples" id="command-examples">
+                <span class="example-title">指令範例：</span>
+                <button type="button" class="example-tag" data-cmd="你好">你好 👋</button>
+                <button type="button" class="example-tag" data-cmd="學校">學校 🏫</button>
+                <button type="button" class="example-tag" data-cmd="變換顏色">變換顏色 🎨</button>
+                <button type="button" class="example-tag" data-cmd="新增待辦 買牛奶">新增待辦 買牛奶 📝</button>
+                <button type="button" class="example-tag" data-cmd="查看待辦">查看待辦 📋</button>
+            </div>
+            <p class="command-status" id="command-status">AI 助理：等待指令中...</p>
+
+            <div class="hero-buttons">
+                <button class="btn-primary" id="change-color-btn">變換顏色</button>
+                <button class="btn-secondary">查看原始碼</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+        </div>
+    </header>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>互動網頁程式設計 余瑄瑤</p>
+        </div>
+    </footer>
+
+    <!-- 歡迎彈窗 -->
+    <div id="welcome-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2>歡迎來到我的網站！</h2>
+            <p>請選擇您的身分：</p>
+            <div class="modal-choices" id="modal-choices">
+                <button type="button" class="btn-primary" id="btn-newcomer">我是新來的</button>
+                <button type="button" class="btn-secondary" id="btn-visitor">我是訪客</button>
+            </div>
+            
+            <!-- 輸入名字區域，預設隱藏 -->
+            <div id="name-input-section" class="name-input-section" style="display: none;">
+                <p>請告訴我您的名字，為您生成專屬頭像：</p>
+                <div class="command-row">
+                    <input type="text" id="visitor-name-input" placeholder="輸入名字..." class="command-input">
+                    <button type="button" class="send-prompt" id="btn-submit-name">確定</button>
+                </div>
+                <div class="name-examples" id="name-examples">
+                    <span class="example-title">例如：</span>
+                    <button type="button" class="example-tag name-tag" data-name="大帥哥">大帥哥 😎</button>
+                    <button type="button" class="example-tag name-tag" data-name="大美女">大美女 🥰</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./java.js"></script>
+</body>
+
+</html>
